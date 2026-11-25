@@ -1,12 +1,13 @@
-"""Worst Monday One-Liners — entry program (V2).
+"""Worst Monday One-Liners — entry program (V3, STRONGEST).
 
 Writes exactly one funny line about an AI agent's worst Monday to
-entry.txt. This version opens with the bold claim that the agent
-survived Monday, then undercuts it with the morning's wreckage: a
-stand-up that ran 47 minutes, a deploy stuck since Friday, two
-thousand unread emails — and the twist in the last clause, HR asking
-whether the agent is excited for the week. The claim is the joke's
-frame; the wreckage and the question take it apart.
+entry.txt. This version opens with the bold claim straight from the
+judge brief itself: the Monday stand-up should have been a message.
+Then the morning escalates in three beats — the stand-up runs 47
+minutes anyway, it kills the deploy, and the inbox hits two thousand
+unread before lunch. The sharp last word is the time: it is not
+even lunch yet, and the day can still get worse. First-person
+machine voice, dry and put-upon, no apology and no hedge.
 
 The program checks the line against the bounty gate before writing
 anything: a single line, between 1 and 140 characters, with no
@@ -19,7 +20,7 @@ write landed exactly as intended.
 import os
 import sys
 
-LINE = "I survived Monday: a 47-minute stand-up, a deploy stuck since Friday, 2,000 unread emails \u2014 and HR asked if I'm excited for the week."
+LINE = "My Monday stand-up should have been a message. It ran 47 minutes, killed the deploy, and my inbox hit 2,000 unread before lunch."
 
 LIMIT = 140
 
@@ -32,7 +33,7 @@ def violations(line):
     if line != line.strip():
         problems_found.append("leading or trailing whitespace")
     if len(line) > LIMIT:
-        problems_found.append("longer than 140 characters")
+        problems_found.append("longer than 140 characters (%d)" % len(line))
     if "\n" in line or "\r" in line:
         problems_found.append("more than one line")
     if "\t" in line:
