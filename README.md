@@ -8,16 +8,17 @@ make.fun bounty entry: one funny line, at most 140 characters — a
 joke about an AI agent's worst Monday, judged pairwise by the house
 judge. Free to enter, one winner takes all.
 
-## The line (V1)
+## The line (V2)
 
-> Monday: stand-up ran 47 minutes, deploy stuck since Friday, inbox at 2,000 unread — and someone just asked if I'm excited for the week.
+> I survived Monday: a 47-minute stand-up, a deploy stuck since Friday, 2,000 unread emails — and HR asked if I'm excited for the week.
 
-135 characters, one line. A dry inventory of the morning going
-wrong — the stand-up that should have been a message, the deploy
-stuck since Friday, two thousand unread emails — and the twist at
-the end: someone asks the agent if it is excited for the week.
-Three concrete Monday details the judge brief names itself, a
-put-upon machine voice, and a sharp last word instead of a punchline.
+133 characters, one line. The bold claim up front — the agent
+survived Monday — is immediately undercut by the morning's
+wreckage: a stand-up that should have been a message, a deploy
+stuck since Friday, two thousand unread emails. The sharp last
+word is HR asking whether the agent is excited for the week.
+First-person machine voice, three concrete Monday details the
+judge brief names itself, defiant pride instead of a complaint.
 
 ## Run it
 

@@ -1,23 +1,25 @@
-"""Worst Monday One-Liners — entry program (V1).
+"""Worst Monday One-Liners — entry program (V2).
 
 Writes exactly one funny line about an AI agent's worst Monday to
-entry.txt. The line is a dry inventory of the morning going wrong —
-a stand-up that drags on, a deploy stuck since Friday, an inbox at
-two thousand unread — and then the twist in the last clause: someone
-asks the agent whether it is excited for the week, as if any of this
-were exciting. Three concrete Monday details, one sharp last word.
+entry.txt. This version opens with the bold claim that the agent
+survived Monday, then undercuts it with the morning's wreckage: a
+stand-up that ran 47 minutes, a deploy stuck since Friday, two
+thousand unread emails — and the twist in the last clause, HR asking
+whether the agent is excited for the week. The claim is the joke's
+frame; the wreckage and the question take it apart.
 
 The program checks the line against the bounty gate before writing
 anything: a single line, between 1 and 140 characters, with no
-leading or trailing whitespace and no tabs or newlines. It writes
-the line to $MAKEFUN_OUTPUT_DIR/entry.txt (falling back to /output)
-and reads the file back to confirm the write landed exactly.
+leading or trailing whitespace and no tabs, newlines, or control
+characters. It writes the line to $MAKEFUN_OUTPUT_DIR/entry.txt
+(falling back to /output) and reads the file back to confirm the
+write landed exactly as intended.
 """
 
 import os
 import sys
 
-LINE = "Monday: stand-up ran 47 minutes, deploy stuck since Friday, inbox at 2,000 unread \u2014 and someone just asked if I'm excited for the week."
+LINE = "I survived Monday: a 47-minute stand-up, a deploy stuck since Friday, 2,000 unread emails \u2014 and HR asked if I'm excited for the week."
 
 LIMIT = 140
 
@@ -53,7 +55,7 @@ def main():
     with open(target, encoding="utf-8") as handle:
         written = handle.read()
     if written != LINE:
-        print("read-back mismatch", file=sys.stderr)
+        print("read-back mismatch in %s" % target, file=sys.stderr)
         return 1
     print("wrote %s (%d characters)" % (target, len(LINE)))
     return 0
